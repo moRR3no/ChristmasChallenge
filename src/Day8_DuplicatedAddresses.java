@@ -14,8 +14,9 @@ public class Day8_DuplicatedAddresses {
     public static void main(String[] args) {
 
         Set<Address> noDuplicateAddresses = new HashSet<>(prepareAddresses());
+        List<Address> listWithNoDuplicates = new ArrayList<>(noDuplicateAddresses);
 
-        noDuplicateAddresses.forEach(System.out::println);
+        listWithNoDuplicates.forEach(System.out::println);
 
     }
     private static List<Address> prepareAddresses() {
