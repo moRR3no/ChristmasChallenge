@@ -12,11 +12,11 @@ public class Day6_ShoppingList {
      * P.S. Nie polecam używać tych przepisów, zostały one maksymalnie uproszone do celu zadania. :D
      */
     public static void main(String[] args) {
-        Map <String, Integer> endShoppingListWithAmounts = new HashMap<>();
+        Map<String, Integer> endShoppingListWithAmounts = new HashMap<>();
 
         int tempValue;
         for (Recipe recipe : prepareRecipes()) {
-            for (Map.Entry<String,Integer> entry : getIngredientsFromRecipe(recipe).entrySet()) {
+            for (Map.Entry<String, Integer> entry : getIngredientsFromRecipe(recipe).entrySet()) {
                 if (!endShoppingListWithAmounts.containsKey(entry.getKey())) {
                     endShoppingListWithAmounts.put(entry.getKey(), entry.getValue());
                 } else {
@@ -111,11 +111,8 @@ public class Day6_ShoppingList {
         );
     }
 
-    private static Recipe getRecipeFromTheList(List<Recipe> recipes, int place) {
-        return recipes.get(place);
-    }
 
-    private static Map <String, Integer> getIngredientsFromRecipe (Recipe recipe) {
+    private static Map<String, Integer> getIngredientsFromRecipe(Recipe recipe) {
         return recipe.getIngredients();
     }
 
@@ -133,20 +130,7 @@ class Recipe {
         this.recipe = recipe;
     }
 
-    public String getDishName() {
-        return dishName;
-    }
-
-
     public Map<String, Integer> getIngredients() {
         return ingredients;
     }
-
-    public String getRecipe() {
-        return recipe;
-    }
-//    public void addToShoppingList (Map <String, Integer> mapOfIngredients, Map <String, Integer> listWithAmount) {
-//        for (Recipe recipe1 : )
-//        if (listWithAmount.containsKey())
-//    }
 }
