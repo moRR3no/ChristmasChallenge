@@ -45,7 +45,7 @@ public class Day15_RecalculateIngredients {
     }
     private static double conversionFactor (int rectangleX, int rectangleY, double diameter) {
         double rectangleField = rectangleX*rectangleY;
-        double circleField = Math.PI * (diameter/2) * (diameter/2);
+        double circleField = Math.PI * Math.pow(diameter/2,2);
         return circleField/rectangleField;
     }
 }
