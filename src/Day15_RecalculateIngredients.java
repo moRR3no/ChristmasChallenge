@@ -31,21 +31,21 @@ public class Day15_RecalculateIngredients {
         System.out.println("Cake ingredients for circle form:");
         for (Map.Entry<String, Double> entry : ingredientsForCircleForm.entrySet()) {
             if (i==ingredientsForCircleForm.size()){
-                System.out.println(i + ". " + entry.getKey() + " - " +  Math.ceil(entry.getValue()) + "g.");
+                System.out.println(i + ". " + entry.getKey() + " - " +  Math.round(entry.getValue()) + "g.");
                 break;
             }
             if (entry.getKey().equals("Jajka")){
-                System.out.println(i + ". " + entry.getKey() + " - " +  Math.ceil(entry.getValue()) + "pcs,");
+                System.out.println(i + ". " + entry.getKey() + " - " +  Math.round(entry.getValue()) + "pcs,");
                 i++;
                 continue;
             }
-            System.out.println(i + ". " + entry.getKey() + " - " + Math.ceil(entry.getValue()) + "g,");
+            System.out.println(i + ". " + entry.getKey() + " - " + Math.round(entry.getValue()) + "g,");
             i++;
         }
     }
     private static double conversionFactor (int rectangleX, int rectangleY, double diameter) {
         double rectangleField = rectangleX*rectangleY;
-        double circleField = Math.PI * diameter;
+        double circleField = Math.PI * (diameter/2) * (diameter/2);
         return circleField/rectangleField;
     }
 }
